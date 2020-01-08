@@ -52,7 +52,7 @@ class ReservationController extends Controller
       $request->request->add(['user_id' => $user_id]);
 
       $validator = $request->validate([
-        'num_of_guests' => 'required|numeric|min:0|max:10',
+        'num_of_guests' => 'required|numeric|min:1|max:6',
         'arrival'     => 'required',
         'departure'  => 'required'
       ]);
@@ -109,7 +109,7 @@ class ReservationController extends Controller
       $reservation->room_id = $request->room_id;
 
       $validator = $request->validate([
-        'num_of_guests' => 'required|numeric|min:0|max:10',
+        'num_of_guests' => 'required|numeric|min:1|max:6',
         'arrival'     => 'required',
         'departure'  => 'required'
       ]);
